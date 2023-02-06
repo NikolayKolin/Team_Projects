@@ -1,8 +1,19 @@
 body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-style: italic;
+    width: 100%;
+    height: 100vh;
 }
 
+h2{
+    text-decoration: wavy;
+    border: solid 10px;
+    border-style: groove;
+    border-color: rgb(80, 191, 228);
+    color: goldenrod;
+    padding: 5px;
+    text-align: center;
+}
 .bgdiv {
     background: linear-gradient(rgb(80, 191, 228) 65%, orange);
     width: auto;
@@ -13,31 +24,46 @@ body {
     align-items: center;
     border: solid 10px;
     flex-wrap: wrap;
-    
 }
 
 .card1 {
-    border: solid 1px black;
     border-radius: 10px;
     padding: 5px 10px;
+    max-height: 500px;
+    max-width: 500px;
+}
+
+.imagecity1{
+    max-width: 250px;
+    max-height: 310px;  
 }
 
 .card2 {
-    border: solid 1px black;
     border-radius: 10px;
     padding: 5px 10px;
 }
 
+.imagecity2{
+    max-width: 250px;
+    max-height: 310px;  
+}
+
 .card3 {
-    border: solid 1px black;
     border-radius: 10px;
     padding: 5px 10px;
+}
+
+.imagecity3{
+    max-width: 250px;
+    max-height: 310px;  
 }
 
 input, button{
     border-radius: 10px;
-    padding: 5px;
-    border: none
+    padding: 10px;
+    border: none;
+    background: linear-gradient(orange, aquamarine);
+    margin: 5px;
 
 }
 
@@ -46,12 +72,47 @@ button:hover{
 
 }
 
-.cardflex{
+.cardflex1{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    margin: 0 10px;
-
+    padding: 0 10px;
 }
 
+.cardflex2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.cardflex3{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.card4 {
+    display:flex;
+    flex-direction: column;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 85%;
+    margin: 15px;
+  }
+  
+  td, th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
