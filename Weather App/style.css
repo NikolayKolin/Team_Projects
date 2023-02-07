@@ -2,7 +2,7 @@ body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-style: italic;
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
 
 h2{
@@ -14,23 +14,24 @@ h2{
     padding: 5px;
     text-align: center;
 }
-.bgdiv {
+
+.bgdiv{
     background: linear-gradient(rgb(80, 191, 228) 65%, orange);
     width: auto;
-    height: 620px;
+    height: 750px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     border: solid 10px;
     flex-wrap: wrap;
+    scroll-behavior: auto;
 }
 
 .card1 {
     border-radius: 10px;
     padding: 5px 10px;
-    max-height: 500px;
-    max-width: 500px;
+    
 }
 
 .imagecity1{
@@ -99,20 +100,41 @@ button:hover{
 .card4 {
     display:flex;
     flex-direction: column;
+    justify-content: space-between;
 }
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 85%;
-    margin: 15px;
-  }
-  
-  td, th {
-    border: 1px solid black;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
+
+.card5 {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card6 {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+ 
+
+.forecastflex{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   border-radius: 10px;
+   padding: 5px 10px;
+   max-height: 600px;
+   max-width: 400px;
+   overflow:scroll; height: 450px;
+ 
+
+}
+
+.forecastflex > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5px;  
+}
