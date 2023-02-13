@@ -33,7 +33,7 @@ divCard2.innerHTML = `
 
 let divCard3 = document.createElement('div');
 divCard3.classList.add('card3', 'card');
-divCard3.innerHTML = `<a class="back-to-index" href="">Back to the Index</a>
+divCard3.innerHTML = `<a class="back-to-index" href="./index.html">Back to the Index</a>
 <div class="cardflex1">
   <h2 class="city3"></h2>
   <img class="imagecity3 imagecity">

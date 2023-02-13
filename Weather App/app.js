@@ -2,6 +2,7 @@ const pageBody = document.getElementById('body');
 const locationInput = document.getElementById('kwInput'); 
 const btnSearch = document.getElementById('search');
 const weatherDataDisplay = document.querySelector(".weather-data-display");
+let switchButton = document.createElement("button");
 
 
 
@@ -23,7 +24,7 @@ btnSearch.addEventListener('click', function (){
         const image = api["results"].map(result => result.urls.full); 
     // do something with the data returned from the API
         pageBody.style.backgroundImage = `url('${image})`;
-        pageBody.style.backgroundSize = '30%'; 
+        pageBody.style.backgroundSize = '40%'; 
 
         
     
@@ -66,7 +67,7 @@ btnSearch.addEventListener('click', function (){
     weatherDataDisplay.classList.add("weather-data-container");
     locationInput.before(weatherDataDisplay);
 
-    let switchButton = document.createElement("button");
+    
     switchButton.innerHTML = "Switch to Fahrenheit";
     switchButton.classList.add("switch-button");
     weatherDataDisplay.appendChild(switchButton);
@@ -75,6 +76,8 @@ btnSearch.addEventListener('click', function (){
     switchButton.addEventListener("click", function() {
       let temperature = weatherDataDisplay.querySelector(".tempC");
       let feelsLike = weatherDataDisplay.querySelector(".tempFeels");
+      let MaxTemp = weatherForecastDisplay.p.querySelector(".tempMaxC");
+      let MinTemp = weatherForecastDisplay.p.querySelector(".tempMinC");
       if (switchButton.innerHTML === "Switch to Fahrenheit") {
         temperature.innerHTML = `Temperature: ${(weatherData.temp_f)}°F`;
         feelsLike.innerHTML = `Feels Like: ${(weatherData.feelslike_f)}°F`;
@@ -94,12 +97,14 @@ btnSearch.addEventListener('click', function (){
   });
 
   
-
+  
   fetch(`https://api.weatherapi.com/v1/forecast.json?key=268adccf869e46f7a02225103230302&q=${weatherLocation}&days=5`)
   .then(response => response.json())
   .then(data => {
     console.log(data);
+    const api = data.forecast.forecastday[0].day;
     const weatherForecast = data.forecast.forecastday;
+    /* console.log(api.forecast.forecastday[0].day.maxtemp_c) */
 
     const weatherForecastDisplay = document.createElement("div");
     weatherForecastDisplay.classList.add("weather-forecast-container");
@@ -122,10 +127,25 @@ btnSearch.addEventListener('click', function (){
     if (weatherDataDisplay) {
       weatherDataDisplay.before(weatherForecastDisplay);
     }
+    // Add an event listener to the switch button
+    switchButton.addEventListener("click", function() {
+     let MaxTemp = weatherForecastDisplay.p.querySelector(".tempMaxC");
+     let MinTemp = weatherForecastDisplay.p.querySelector(".tempMinC");
+     if (switchButton.innerHTML === "Switch to Fahrenheit") {
+      MaxTemp.innerHTML = `Max Temp: ${(api.maxtemp_f)}°F`;
+      MinTemp.innerHTML = `Min Temp: ${(api.mintemp_f)}°F`;
+      switchButton.innerHTML = "Switch to Celsius";
+     } else {
+      MaxTemp.innerHTML = `Max Temp: ${api.maxtemp_c}°C`;
+      MinTemp.innerHTML = `Min Temp: ${api.mintemp_c}°C`;
+       switchButton.innerHTML = "Switch to Fahrenheit";
+     }
+   });
   })
   .catch(error => {
     console.error(error);
   });
+
 
   
 
