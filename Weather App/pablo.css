@@ -1,0 +1,127 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    width: 100vw;
+    height: 100vh;
+}
+
+h2 {
+    text-decoration: wavy;
+    border: solid 10px;
+    border-style: groove;
+    border-color: rgb(80, 191, 228);
+    color: goldenrod;
+    padding: 5px;
+    text-align: center;
+}
+
+.page-container2 {
+    background: linear-gradient(rgb(80, 191, 228) 65%, orange);
+    width: 100vw;
+    height: 100vh;
+    border: solid 10px black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: auto;
+}
+
+.back-to-index{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+}
+
+.card {
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.imagecity {
+    max-width: 250px;
+    max-height: 310px;  
+}
+
+input, button, a {
+    border-radius: 10px;
+    padding: 8px;
+    border: none;
+    background: linear-gradient(orange, aquamarine);
+    margin: 5px;
+}
+
+button:hover, input:hover {
+    border-style: ridge;
+}
+
+.cardflex1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.cardflex2, .cardflex3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.card4, .card5, .card6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 750px;
+    margin: 20px 0;
+}
+
+.forecastflex {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 5px 10px;
+   max-height: 450px;
+   max-width: 400px;
+   overflow-y: auto;
+}
+
+.forecastflex > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+}
+
+
+@media only screen and (max-width: 1200px){
+    /*Tablets [601px -> 1200px]*/
+    .bgdiv {
+        background: red;
+        overflow-y: scroll;   
+    }
+
+}
+@media only screen and (max-width: 600px){
+	/*Big smartphones [426px -> 600px]*/
+    .bgdiv {
+        background: green;
+    }
+}
+
+@media only screen and (max-width: 425px){
+	/*Small smartphones [325px -> 425px]*/
+    .bgdiv {
+        background: blue;
+    }
+}
